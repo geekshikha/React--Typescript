@@ -1,11 +1,25 @@
-# Creating a Todo List by using react with typescript!
+# Creating a TODO List by using React with Typescript!
 
 
 ## Using - Generic Type
 
-Generics offer a way to create reusable components. Generics provide a way to make components work with any data type and not restrict to one data type. So, components can be called or used with a variety of data types. With this Generics feature, we can convert this function to a Generic function.
+Generics offer a way to create reusable components. Generics make components work with any data type. Components can be used with a variety of data types.
 
-For this we use a special syntax here, after the function name, in front of the parameter list, we add angle brackets and in here we can define a Generic type which will only be available inside of this function.
+In below code snippet, `TodoItem` function takes `props` and using Generic Type we specified type of `text` and `onRemoveTodo` function.
+
+```javascript
+const TodoItem: React.FC<{ text: string; onRemoveTodo: () => void }> = (
+  props
+) => {
+  return (
+    <li className={classes.item} onClick={props.onRemoveTodo}>
+      {props.text}
+    </li>
+  );
+};
+
+export default TodoItem;
+```
 
 ### Adding Slides
 
